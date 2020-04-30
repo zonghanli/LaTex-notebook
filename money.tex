@@ -1,0 +1,36 @@
+\documentclass[oneside,a4papar,11pt,UTF8]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{mathpazo}  
+\usepackage{algorithm}  
+\usepackage{algorithmicx}  
+\usepackage{algpseudocode}  
+\floatname{algorithm}{算法}  
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}  
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+\def\angles#1{{%
+		\vbox{\hrule height .2pt
+			\kern 1pt
+			\hbox{$\scriptstyle {#1}\kern 1pt$}%
+		}\kern-.05pt \vrule width .2pt
+}}
+%
+\begin{document}
+	\title{保险精算}
+	\author{OscarLi}
+	\maketitle 
+	\tableofcontents
+	\chapter{利息度量}
+	
+	\section{贴现}
+	$v=\frac{1}{1+i}$
+	\chapter{等额年金}
+	\noindent$a_{\angles{n}},s_{\angles{n}}$\\	$\ddot{a}_{\angles{n}},\ddot{s}_{\angles{n}}$
+	\section{期初期末年金的现值}
+	$a_{\angles{n}}=v+v^2+v^3+\dots+v^n$
+\\ $\ddot{a}=\frac{1-v^n}{d}$
+\chapter{变额年金}
+
+\chapter{收益率}
+\end{document}
