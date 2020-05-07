@@ -1,2 +1,0 @@
-# LaTex-notebook
-record notebooks

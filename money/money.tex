@@ -1,0 +1,62 @@
+\documentclass[cn,11pt,chinese,black]{elegantbook}
+\title{利息理论}
+\subtitle{made by \LaTeX{} }
+\author{OscarLi}
+\institute{西南交大数学学院}
+\cover{cover14.pdf}
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+\begin{document}
+\def\angles#1{{%
+		\vbox{\hrule height .2pt
+			\kern 1pt
+			\hbox{$\scriptstyle {#1}\kern 1pt$}%
+		}\kern-.05pt \vrule width .2pt
+}}
+%
+\maketitle
+	\chapter{利息度量}
+	
+	\section{贴现}
+	$v=\frac{1}{1+i}$
+	\chapter{等额年金}
+	\noindent$a_{\angles{n}},s_{\angles{n}}$\\	$\ddot{a}_{\angles{n}},\ddot{s}_{\angles{n}}$
+	\section{期初期末年金的现值}
+	$a_{\angles{n}}=v+v^2+v^3+\dots+v^n$
+\\ $\ddot{a}=\frac{1-v^n}{d}$
+\chapter{变额年金}
+\begin{definition}{期末付递增年金}
+	$(Ia)_{\angles{n}}=v+2 v^{2}+3 v^{3}+\cdots+(n-1) v^{n-1}+n v^{n}$
+\end{definition}
+\begin{remark}
+	$(Ia)_{\angles{n}}=\frac{\ddot{a}_{\angles{n}}-n v^{n}}{i}$
+\end{remark}
+$(Is)_{\angles{n}}=(1+i)^n(Ia)_{\angles{n}}$
+\chapter{收益率}
+\begin{definition}{Dollar-Weighted Return For a One-Year Period}
+\noindent	Suppose the following information is known:
+	(i) the balance in a fund at the start of the year is $A$ \\
+	(ii) for $0<t_{1}<t_{2}<\cdots<t_{n}<1,$ the net deposit at time $t_{k}$ is amount $C_{k}$ (positive for a net deposit, negative for a net withdrawal), and \\
+	(iii) the balance in the fund at the end of the year is $B$
+	Then the net amount of interest earned by the fund during the year is $I=B-\left[A+\sum_{k=1}^{n} C_{k}\right],$ and the dollar-weighted rate of return earned by the fund for the year is
+	\[
+	\frac{I}{A+\sum_{k=1}^{n} C_{k}\left(1-t_{k}\right)}
+	\]
+\end{definition}
+\begin{remark}
+	(I a)_{\bar{n}}=\frac{\ddot{a}_{\bar{n} 1}-n v^{n}}{i}
+\end{remark}
+\begin{definition}{Time-Weighted Return For a One-Year Period}
+\noinent Suppose the following information is known:\\
+	(i) the balance in a fund at the start of the year is $A$\\
+	(ii) for $0<t_{1}<t_{2}<\cdots<t_{n}<1,$ the net deposit at time $t_{k}$ is amount $C_{k}($ positive for a net deposit, negative for a net withdrawal)\\
+	(iii) the value of the fund just before the net deposit at time $t_{k}$ is $F_{k},$ and\\
+	(iv) the balance in the fund at the end of the year is $B$
+	The time-weighted return rate earned by the fund for the year is
+	\[
+	\left[\frac{F_{1}}{A} \times \frac{F_{2}}{F_{1}+C_{1}} \times \frac{F_{3}}{F_{2}+C_{2}} \times \cdots \times \frac{F_{k}}{F_{k-1}+C_{k-1}} \times \frac{B}{F_{k}+C_{k}}\right]-1
+	\]	
+\end{definition}	
+\section{再投资}
+\end{document}
