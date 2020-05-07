@@ -1,26 +1,14 @@
-\documentclass{report}
-\usepackage[utf8]{inputenc}
-\usepackage[UTF8]{ctex}
-\usepackage{framed}
-\usepackage{xcolor}
-\usepackage{mathpazo}  
-\usepackage{amsmath}  %使用宏包，这里使用的是调用公式宏包，可以调用多个宏包
-\usepackage{amsthm}
-\newtheorem{theorem}{定理}
-\newtheorem{lemma}{引理}[section]
-\newtheorem{definition}{定义}[section]   
-\newtheorem{example}{例子}[section]
-\newtheorem{exercise}{练习}[section]
-\usepackage{hyperref}
-\hypersetup{
-	colorlinks=true,
-	linkcolor=black
-}
-\begin{document}  %开始写文章
-\title{数理统计} 
+\documentclass[cn,11pt,chinese,black]{elegantbook}
+\title{数理统计}
+\subtitle{made by \LaTeX{} }
 \author{OscarLi}
-\maketitle 
-\tableofcontents
+\institute{西南交大数学学院}
+\cover{cover14.pdf}
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+\begin{document}  %开始写文章
+	\maketitle
 \chapter{probability}
 \section{离散型随机变量}
 $P\left(X=x_{k}\right)=p_{k} \quad k=1,2, \cdots$\\
@@ -48,17 +36,20 @@ $(1)P(X=a)=0$ 涉及测度论\\
 $(2)P(a<X \leq b)=P(a \leq X<b)=P(a<X<b)$\\
 $=P(a \leq X \leq b)=\int_{a}^{b} p(x) d x=F(b)-F(a)$
 \subsection{连续型随机变量的常见分布}
-1.均匀分布\\
+\begin{definition}{均匀分布}
 $p(x)=\left\{\begin{array}{ll}{\frac{1}{b-a}} & {a<x<b} \\ {0} & {others}\end{array}\right.$\\
 $\boldsymbol{X} \sim \boldsymbol{U}(\boldsymbol{a}, \boldsymbol{b})$
-2.指 数 分 布\\
+\end{definition}
+\begin{definition}{指数分布}
 $p(x)=\left\{\begin{array}{ll}{\alpha e^{-\alpha x}} & {x \geq 0} \\ {0} & {x<0}\end{array}\right.$\\
 $F(x)=\left\{\begin{array}{cc}{1-e^{-\lambda x},} & {x>0} \\ {0,} & {x \leq 0}\end{array}\right.$\\
-$X \sim \operatorname{Exp}(\lambda)$\\
-3.正 态 分 布\\
+$X \sim \operatorname{Exp}(\lambda)$
+\end{definition}
+\begin{definition}{正态分布}
 $p(x)=\frac{1}{\sqrt{2 \pi} \sigma} e^{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}}\lbrace \infty<x<+\infty \rbrace$ \\
+$X \sim N\left(\mu, \sigma^{2}\right)$
+\end{definition}
 
-$X \sim N\left(\mu, \sigma^{2}\right)$\\
 性质：$p(x)=p(2 \mu-x)$\\
 对于正态分布，如何计算概率？？
 $Z=\frac{X-\mu}{\sigma} \sim N(0,1)且\quad F(x)=\Phi\left(\frac{x-\mu}{\sigma}\right)$\\

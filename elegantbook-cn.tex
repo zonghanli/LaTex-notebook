@@ -1,0 +1,126 @@
+\documentclass[cn,11pt,chinese,black]{elegantbook}
+\title{复变函数之调和函数与Laplace方程}
+\subtitle{made by \LaTeX{} }
+\author{2018115438 李宗翰}
+\institute{西南交大数学学院}
+\cover{cover14.pdf}
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+\begin{document}
+\maketitle
+\chapter{调和函数与Laplace方程}
+\section{调和函数}
+\begin{definition}{调和函数}
+\noindent$H(x,y)$为二元实函数且有二阶连续偏导数 \\
+$\Delta H=0,\Delta=\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}$,$H(x,y)$为区域D上的调和函数
+\end{definition}
+\begin{definition}{Laplace equation}
+$$H_{x x}(x, y)+H_{y y}(x, y)=0$$
+\end{definition}
+\begin{definition}{调和共轭} 
+对于函数$u(x, y)$调和共轭是有函数$v(x, y)$使得$f(z)=u(x, y)+i v(x, y)$是可微的
+\end{definition}
+\begin{example}
+$\frac{i}{z^{2}}$是调和的
+$\frac{i}{z^{2}}=\frac{i}{z^{2}} \cdot \frac{\bar{z}^{2}}{\bar{z}^{2}}=\frac{i \bar{z}^{2}}{(z \bar{z})^{2}}=\frac{i \bar{z}^{2}}{|z|^{4}}=\frac{2 x y+i\left(x^{2}-y^{2}\right)}{\left(x^{2}+y^{2}\right)^{2}}$\\
+$u(x, y)=\frac{2 x y}{\left(x^{2}+y^{2}\right)^{2}},v(x, y)=\frac{x^{2}-y^{2}}{\left(x^{2}+y^{2}\right)^{2}}$都是调和的
+\end{example}
+\section{调和函数的性质}
+
+\begin{theorem}{解析 $\rightarrow$ 调和}
+\noindent 如果函数 $(f(z)=u(x, y)+i v(x, y))$ 是解析函数, 那么 $u(x, y)$和$v(x, y)$ 是调和函数
+$u: \mathbb{R}^{2} \rightarrow \mathbb{R}$
+\end{theorem}
+
+\begin{theorem}{调和 $\rightarrow$ 解析}
+\noindent 如果$u(x, y)$ 一个调和函数, 存在 $v(x, y)$,使得 $f(z)=u(x, y)+i v(x, y)$ 是解析的.
+$v(x, y)$：调和共轭 $u(x, y)$
+\end{theorem}
+\begin{proof}
+利用柯西黎曼方程$$ \left(\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y} \& \frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}\right)$$ 
+
+$f(z)=u(x, y)+i v(x, y)$ 是可解析的, \\
+$\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}=\frac{\partial}{\partial x}\left(\frac{\partial u}{\partial x}\right)+\frac{\partial}{\partial y}\left(\frac{\partial u}{\partial y}\right)=\frac{\partial}{\partial x}\left(\frac{\partial v}{\partial y}\right)+\frac{\partial}{\partial y}\left(-\frac{\partial v}{\partial x}\right)=\frac{\partial^{2} v}{\partial x \partial y}-\frac{\partial^{2} v}{\partial x \partial y}=0$\\
+$\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2} v}{\partial y^{2}}=\frac{\partial}{\partial x}\left(\frac{\partial v}{\partial x}\right)+\frac{\partial}{\partial y}\left(\frac{\partial v}{\partial y}\right)=\frac{\partial}{\partial x}\left(-\frac{\partial u}{\partial y}\right)+\frac{\partial}{\partial y}\left(\frac{\partial u}{\partial x}\right)=-\frac{\partial^{2} u}{\partial x \partial y}+\frac{\partial^{2} u}{\partial x \partial y}=0$
+\end{proof}
+
+
+\begin{theorem}{可微的条件}\noindent 复变函数 $f(z)=u(x, y)+i v(x, y)$ 是可微的在 $a$ 区域$R,$ 当且仅当满足条件in $\mathrm{R}:$ \\
+$1: \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial v}{\partial x}, \frac{\partial v}{\partial y}$ 是连续的 \\
+$2: \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial v}{\partial x}, \frac{\partial v}{\partial y} \quad$满足柯西黎曼方程
+\end{theorem}
+\begin{definition}{Dirichlet Boundary Value Problem.}
+\noindent Dirichlet边值问题中解决
+$$
+\nabla^{2} u=0 \quad \text { in } U \quad u=f \quad \text { on } \partial U
+$$
+对于给定的$f$ 定义在 $\partial U$
+\end{definition}
+\begin{proof}
+调和函数的均值性质直接遵循调和函数的均值性质,对于这个我们直接利用柯西积分方程，存在一个全纯函数 $f: U \rightarrow \mathbb{C}$ 使得$\operatorname{Re} f=u .$ 通过柯西积分方程, 我们得到
+$$
+f\left(z_{0}\right)=\frac{1}{2 \pi \mathrm{i}} \oint_{\gamma\left(z_{0}, r\right)} \frac{f(z)}{z-z_{0}} \mathrm{d} z=\frac{1}{2 \pi \mathrm{i}} \int_{0}^{2 \pi} \frac{f\left(z_{0}+r \mathrm{e}^{\mathrm{i} \theta}\right)}{r \mathrm{e}^{\mathrm{i} \theta}} \mathrm{i} r \mathrm{e}^{\mathrm{i} \theta} \mathrm{d} \theta=\frac{1}{2 \pi} \int_{0}^{2 \pi} f\left(z_{0}+r \mathrm{e}^{\mathrm{i} \theta}\right) \mathrm{d} \theta
+$$
+选择实数部分：
+$$
+u\left(z_{0}\right)=\frac{1}{2 \pi} \int_{0}^{2 \pi} u\left(z_{0}+r \mathrm{e}^{\mathrm{i} \theta}\right) \mathrm{d} \theta
+$$
+\end{proof}
+\begin{proposition}
+\noindent 设 $U \subseteq \mathbb{C}$ 是一个单连通域且$u \in C^{2}(U)$ 是调和函数.存在一个全纯函数$f: U \rightarrow \mathbb{C}$使得$\operatorname{Re} f=u .$ 进一步来说, $u$ 是调和的
+\end{proposition}
+\begin{proof} 对于每一个$B\left(z_{0}, r\right) \subseteq U, u$ 满足均值条件on $B\left(z_{0}, r\right) .$ 存在一个特定的调和函数 $v: B\left(z_{0}, r\right) \rightarrow \mathbb{R}$使得$u=v$ on $\partial B\left(z_{0}, r\right) .$ Both $u$ and $v$ 满足均值条件 and hence the extrem value property. It follows that $u=v$ in $B\left(z_{0}, r\right)$. 因为 $B\left(z_{0}, r\right)$是任意的, $u=v$ in $U$. 因此 $u$ 是调和函数
+\end{proof}
+\begin{theorem}{调和函数的均值性质}
+\noindent 假设$u: B\left(z_{0}, r\right) \rightarrow \mathbb{R}$ 是调和的. 
+$u\left(z_{0}\right)=\frac{1}{2 \pi} \int_{0}^{2 \pi} u\left(z_{0}+r \mathrm{e}^{\mathrm{i} \theta}\right) \mathrm{d} \theta$
+\end{theorem}
+\noindent 考虑$g: U \rightarrow \mathbb{C}$由$g(z)=\frac{\partial u}{\partial x}-\mathrm{i} \frac{\partial u}{\partial y}$给出. g is real-differentiable as $u \in C^{2}(U)$ ，然后我们可以发现$g$ 满足柯西黎曼方程.  $g$ 是全纯的. 因为 $U$ 是单连通的,  has a primitive $G$ on $U$
+假使$G(z)=a(z)+\mathrm{i} b(z) .$ 接下来，
+$$
+\frac{\partial a}{\partial x}-\mathrm{i} \frac{\partial a}{\partial y}=G^{\prime}=g=\frac{\partial u}{\partial x}-\mathrm{i} \frac{\partial u}{\partial y} \quad \text { for } z \in U
+$$
+Hence $\frac{\partial a}{\partial x}=\frac{\partial u}{\partial x}$ and $\frac{\partial a}{\partial y}=\frac{\partial u}{\partial y} .$ 特别的来说 $\nabla(a-u)=0 .$ 通过链式法则, $a$和$u$ 微分得到一个常数.在$U .$ 然后$f(z):=G(z)+\left(a\left(z_{0}\right)-u\left(z_{0}\right)\right)$是一个全纯函数满足 Re $f=u$ on $U .$ $f$ 是可解析的. 这表示$u=\operatorname{Re} f$ 是解析的
+\begin{lemma}
+\noindent 假设$f: U \rightarrow V$是全纯的和$u: V \rightarrow \mathbb{R}$ 是调和的.$u \circ f: U \rightarrow \mathbb{R}$也是调和的
+\end{lemma}
+\begin{theorem}{Poisson Formula for Harmonic Functions on the Unit Disk.}
+\noindent 假设$u: \bar{B}(0,1) \rightarrow \mathbb{C}$ 是调和的在$\mathbb{D} .$ For $z \in \mathbb{D},$我们有
+\[
+u\left(z_{0}\right)=\frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{1-\left|z_{0}\right|^{2}}{\left|\mathrm{e}^{\mathrm{i} 0}-z_{0}\right|^{2}} u\left(\mathrm{e}^{\mathrm{i} \theta}\right) \mathrm{d} \theta
+\]
+\end{theorem}
+\begin{proof}
+对于每个$z_{0} \in \mathbb{D},$ 自同构
+\[
+\varphi_{z_{0}}(z)=\frac{z_{0}-z}{1-\overline{z_{0}} z}
+\]
+of the unit disk exchanges 0 and $z_{0} .$ Let $v:=u \circ \varphi_{z_{0}} .$ $v$ 是调和的在 $\mathbb{D}$ and $v(0)=u\left(z_{0}\right) .$ 通过中值定理, 我们有
+\[
+v(0)=\frac{1}{2 \pi} \int_{0}^{2 \pi} v\left(\mathrm{e}^{\mathrm{i} \beta}\right) \mathrm{d} \beta
+\]
+注意到 $\varphi_{z_{0}}$ maps $\partial \mathbb{D}$ to $\partial \mathbb{D}$ by
+\[
+\mathrm{e}^{\mathrm{i} \theta}=\frac{z_{0}-\mathrm{e}^{\mathrm{i} \beta}}{1-\bar{z}_{0} \mathrm{e}^{\mathrm{i} \beta}} \Rightarrow \mathrm{e}^{\mathrm{i} \beta}=\frac{z_{0}-\mathrm{e}^{\mathrm{i} 0}}{1-\bar{z}_{0} \mathrm{e}^{\mathrm{i} \theta}}
+\]
+取两侧的微分和模:
+\[
+\mathrm{i} \mathrm{e}^{\mathrm{i} \beta} \mathrm{d} \beta=\mathrm{i} \mathrm{e}^{\mathrm{i} \theta} \mathrm{d} \theta \frac{\left|z_{0}\right|^{2}-1}{\left(1-\bar{z}_{0} \mathrm{e}^{\mathrm{i} \theta}\right)^{2}} \Rightarrow \mathrm{d} \beta=\mathrm{d} \theta \frac{1-\left|z_{0}\right|^{2}}{\left|1-\overline{z_{0}} \mathrm{e}^{\mathrm{i} \theta}\right|^{2}}=\mathrm{d} \theta \frac{1-\left|z_{0}\right|^{2}}{\left|\mathrm{e}^{\mathrm{i} \theta}-z_{0}\right|^{2}}
+\]
+替换回积分，我们有:
+\[
+u\left(z_{0}\right)=\frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{1-\left|z_{0}\right|^{2}}{\left|\mathrm{e}^{\mathrm{i} \theta}-z_{0}\right|^{2}} u\left(\mathrm{e}^{\mathrm{i} \theta}\right) \mathrm{d} \theta
+\]
+\end{proof}
+\begin{corollary}{Poisson Kernel的性质}
+(i) $P(\zeta, z)>0$ for all $z \in \mathbb{D}$ and $\zeta \in \partial \mathbb{D}$\\
+(ii) $\int_{0}^{2 \pi} P(\zeta, z) \mathrm{d} \theta=2 \pi$ for all $z \in \mathbb{D}$\\
+(iii) 固定$\zeta \in \partial \mathbb{D} .$ Then $P(\zeta, z)$ 在$\mathbb{D}$调和
+\end{corollary}
+\begin{proof}
+(i). 由定义给出\\
+(ii). $\int_{0}^{2 \pi} P(\zeta, z) \mathrm{d} \theta=\int_{0}^{2 \pi} \frac{1-\left|z_{0}\right|^{2}}{\left|\mathrm{e}^{\mathrm{i} \theta}-z_{0}\right|^{2}} \mathrm{d} \theta=\int_{0}^{2 \pi} \mathrm{d} \beta=2 \pi$\\
+(iii). $P(\zeta, z)=\operatorname{Re}\left(\frac{\zeta+z}{\zeta-z}\right)$ 和the Schwarz kernel is 在 $\mathbb{D}$全纯的
+\end{proof}
+\end{document}
