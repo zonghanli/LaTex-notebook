@@ -1,0 +1,69 @@
+\chapter{拓扑空间}
+\section{开集，闭集}
+\begin{definition}{开集}
+\noindent Let $(X, \mathcal{T})$ be any topological space. Then the members of $\mathcal{T}$ are said to be open sets.
+\end{definition}
+\begin{remark}
+	开集和闭集不是一个相对概念，同一个成员可能同时开同时闭
+\end{remark}
+\begin{example}
+	$\begin{array}{lll}  \text { Let } X=\{a, b, c, d, e, f\} \text { and }\end{array}$
+	\[
+	\tau_{1}=\{X, \emptyset,\{a\},\{c, d\},\{a, c, d\},\{b, c, d, e, f\}\}
+	\]
+	找出又开又闭的集合，只开,只闭的集合
+\end{example}
+\begin{remark}
+	又开又闭的集合:$\{a\}$ \\
+	只开:$\{c, d\}$
+	只闭:$\{b,e,f\}$
+\end{remark}
+\begin{definition}{有限补拓扑}
+	$\mathcal{T}_{f}=\left\{A \subset X | \quad A^{c} \text { 是 } X \text {的有限子集}\right\} \cup\{\emptyset\}$
+\end{definition}
+\begin{definition}{可数补拓扑}
+	$\mathcal{T}_{c}=\left\{A \subset X | \quad A^{c} \text { 是 } X \text {的可数子集}\right\} \cup\{\emptyset\}$
+\end{definition}
+\begin{definition}{邻域}
+\noindent $(X,\tau) ,A\subset X,x \in A$,
+$\exists U \in \tau\rightarrow x \in U \subset A$
+$x$为$A$的内点，$A$为$x$的邻域
+\end{definition}
+\begin{definition}{内点,内部}
+\noindent	 已知拓扑空间 $X, x \in X, A \subseteq X,$ 若
+	\[
+	\exists x \text { 的邻域 } U, \text { s.t. } \quad U \subseteq A
+	\]
+	则称 $x$ 是 $A$ 的 内点 $. A$ 的全体内点记为 $A^{\circ},$ 称为 $A$ 的内部 $(\text { interior })$
+\end{definition}
+\begin{property}
+(1). 若 $A \subset B,$ 则 $A^{\circ} \subset B^{\circ}$ \\
+(2). $A^{\circ}=\bigcup\{U \subset X | U \text { 是 } X \text { 的开集且 } U \subset A\},$ 因此 $A$ 的内部 $A^{\circ}$ 是包含在
+$A$ 中最大的开集;\\
+(3). $A$ 是开集 $\Longleftrightarrow A=A^{\circ}$\\
+$(4) \cdot(A \cap B)^{\circ}=A^{\circ} \cap B^{\circ}$ \\
+$(5) .(A \cup B)^{\circ} \supset A^{\circ} \cup B^{\circ}$ \\
+\end{property}
+\begin{definition}{聚点}
+\noindent 设 $A$ 是拓扑空间 X 的子集， $x \in X .$ 如果 $x$ 的任何一个邻域 $U,$ 都
+有 $U \cap(A \backslash\{x\}) \neq \emptyset,$ 称 $x$ 为 $A$ 聚点. \\$A$ 的所有聚点的集合称为 $A$ 的导集，记
+作 $d(A) .$  \\称集合 $\bar{A}=A \cup d(A)$ 为 $A$ 的闭包.
+\end{definition}
+\begin{theorem}
+\noindent $x \in \bar{A} \Longleftrightarrow x$ 的任意邻域与 $A$ 相交都不空.
+\end{theorem}
+\begin{theorem}
+\noindent A 是拓扑空间 X 的稠密子集$\Longleftrightarrow$ X 的每个非空开集与 A 相交非空
+\end{theorem}
+\begin{definition}{稠密}
+\noindent 拓扑空间 X 的子集 A 称为稠密的，如果 $\bar{A}=X .$ 如果 $X$ 有一个
+可数的稠密子集，则称 X 是可分空间
+\end{definition}
+\begin{exercise}
+设 $\mathbb{Z}+$ 是全体正整数的集合，令 表示满足如下条件的集合$U$构成的
+集族 $\mathcal{T}$\\
+“若 $n \in U,$ 则 $\mathrm{n}$ 的每个因数都在 $\mathrm{U}$ 中"
+是$\mathbb{Z}+$的一个拓扑。\\
+(a). 设集合 $B=\{2,5\},$ 求: $d(B)$
+
+\end{exercise}

@@ -1,0 +1,32 @@
+	\chapter{利息度量}
+		\section{累积函数}
+	\begin{definition}{累积函数}
+\noindent 	时间零点的1元在时间t的累值，记为 $a(t)$
+		\end{definition}
+\begin{property}
+  \noindent  (1) $a(0)=1$\\
+(2) $a(t)$ 通常是时间的增函数\\
+(3) 当利息连续产生时， $a(t)$ 是时间的连续函数
+\end{property}
+	\section{贴现}
+	\begin{definition}{贴现}
+\noindent	$v=\frac{1}{1+i}$  $d=iv$
+	\end{definition}
+	
+\begin{definition}{利息力}
+\noindent		设可积函数连续可导,则称
+\[
+\delta_{t}=\frac{a^{\prime}(t)}{a(t)}=[\ln a(t)]^{\prime}
+\]
+为时刻 t 的利息力
+		\end{definition}
+\begin{property}
+	累积函数：\\
+\[
+a(t)=\exp \left(\int_{0}^{t} \delta_{s} d s\right)
+\]\\
+ 贴现函数：\\
+\[
+a^{-1}(t)=\exp \left(-\int_{0}^{t} \delta_{s} d s\right)
+\]
+	\end{property}
